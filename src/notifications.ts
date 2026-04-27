@@ -3,8 +3,8 @@ import { log, error } from './logger';
 
 export const setupNotifications = () => {
   const handleMessage = (e: MessageEvent) => {
-    if (e.type !== 'text' || typeof e.data !== 'string') {
-      error('Unexpected message type', e.type);
+    if (typeof e.data !== 'string') {
+      error('Unexpected message data type', typeof e.data);
       return;
     }
 
